@@ -1,7 +1,7 @@
 const CACHE_NAME = 'controle-luft-cache-v1';
-// https://script.google.com/a/macros/luftsolutions.com.br/s/AKfycbxWlZe9FQHt7b2vnrwLb2oV9BKHqsoYAdlKyKBxzvwp0rkZkzTblznkHN2YjQTtE5jd/exec
+// https://script.google.com/a/macros/luftsolutions.com.br/s/AKfycbx7x-tZaqEqh3JKmxiAyDAAQ8HY_uBOemyLsAaD0FYubyK7SAy60jBjijgyRKhJQlms/exec
 const urlsToCache = [
-  'https://script.google.com/a/macros/luftsolutions.com.br/s/AKfycbxWlZe9FQHt7b2vnrwLb2oV9BKHqsoYAdlKyKBxzvwp0rkZkzTblznkHN2YjQTtE5jd/exec'
+  'https://script.google.com/a/macros/luftsolutions.com.br/s/AKfycbx7x-tZaqEqh3JKmxiAyDAAQ8HY_uBOemyLsAaD0FYubyK7SAy60jBjijgyRKhJQlms/exec'
 ];
 
 self.addEventListener('install', event => {
