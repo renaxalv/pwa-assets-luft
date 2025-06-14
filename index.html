@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Selecionadoras</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F5B041">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            height: 100vh; 
+            overflow: hidden;
+            background: linear-gradient(45deg, #FFF0D9, #FFAA4A);
+        }
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #F5B041;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+        }
+        .loading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 15px auto;
+            border: 3px solid #F5B041;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        Carregando Controle de Selecionadoras...
+    </div>
+    
+    <!-- SUBSTITUA pela URL do seu Apps Script -->
+    <iframe 
+        src="https://script.google.com/macros/s/SEU_ID_AQUI/exec"
+        onload="document.querySelector('.loading').style.display='none'"
+        title="Controle de Selecionadoras">
+    </iframe>
+    
+    <script>
+        // Registrar o service worker para PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker registrado com sucesso'))
+                .catch(err => console.log('Erro ao registrar Service Worker:', err));
+        }
+
+        // Melhorar a experiência do usuário
+        window.addEventListener('load', () => {
+            // Esconder loading após 5 segundos como fallback
+            setTimeout(() => {
+                const loading = document.querySelector('.loading');
+                if (loading) loading.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
